@@ -11,6 +11,8 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
+const ReversedButton = (props) => <StyledButton {...props} children={props.children.split("").reverse()}/>;
+
 export default function Button({ text, primary }) {
-  return <StyledButton primary={primary}>{text}</StyledButton>;
+  return <StyledButton as={ReversedButton} primary={primary}>{text}</StyledButton>;
 }
